@@ -15,13 +15,11 @@ class RendererTest extends UnitTestCase
 
     protected function setUp()
     {
-        $this->defaultConfiguration = array(
-        );
-    }
+        $this->defaultConfiguration = array();
 
-    protected function tearDown()
-    {
-        unset($this->defaultConfiguration);
+        // needed to run tests in CLI environment
+        $_SERVER["SERVER_PROTOCOL"] = "HTTP/1.1";
+        $_SERVER["HTTP_HOST"] = "localhost";
     }
 
     /**
